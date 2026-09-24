@@ -1,0 +1,1699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SDEC | Skill Development Entrepreneurship Company</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #111;
+            background: #fff;
+            line-height: 1.6;
+        }
+
+        /* HEADER */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #000;
+            color: #fff;
+            padding: 14px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-area img {
+            width: 48px;
+            height: 48px;
+            object-fit: cover;
+            border-radius: 50%;
+            background: #fff;
+        }
+
+        .logo-area h2 {
+            font-size: 22px;
+        }
+
+        nav {
+            display: flex;
+            gap: 18px;
+            align-items: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #ccc;
+        }
+
+        .admin-link {
+            border: 1px solid #fff;
+            padding: 7px 13px;
+            border-radius: 5px;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 90vh;
+            background:
+                linear-gradient(rgba(0,0,0,.78), rgba(0,0,0,.78)),
+                url("./images/sdec-logo.jpg");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            padding: 60px 7%;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .hero-logo {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #fff;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #ddd;
+            max-width: 750px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 25px;
+            background: #fff;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .btn:hover {
+            background: #ddd;
+            transform: translateY(-2px);
+        }
+
+        .btn-dark {
+            background: transparent;
+            color: #fff;
+            border: 1px solid #fff;
+        }
+
+        .btn-dark:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        /* GENERAL */
+
+        section {
+            padding: 80px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 12px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 45px;
+        }
+
+        /* ABOUT */
+
+        .about {
+            background: #f5f5f5;
+        }
+
+        .about-grid {
+            max-width: 1050px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 18px;
+            color: #444;
+        }
+
+        .about-box {
+            background: #000;
+            color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+        }
+
+        .about-box h3 {
+            font-size: 27px;
+            margin-bottom: 15px;
+        }
+
+        .about-box p {
+            color: #ddd;
+        }
+
+        /* STATS */
+
+        .stats {
+            background: #000;
+            color: #fff;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+
+        .stat h2 {
+            font-size: 38px;
+        }
+
+        .stat p {
+            color: #ccc;
+        }
+
+        /* PROGRAMS */
+
+        .cards {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,.06);
+            transition: .3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0,0,0,.12);
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #555;
+        }
+
+        .card .btn {
+            margin-top: 15px;
+            background: #000;
+            color: #fff;
+        }
+
+        .card .btn:hover {
+            background: #333;
+        }
+
+        /* NEWS */
+
+        .news {
+            background: #f5f5f5;
+        }
+
+        .news-card {
+            border-left: 5px solid #000;
+        }
+
+        .news-date {
+            font-size: 13px;
+            color: #777;
+            margin-bottom: 10px;
+        }
+
+        /* GALLERY */
+
+        .gallery {
+            background: #fff;
+        }
+
+        .gallery-grid {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 10px;
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            display: block;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.04);
+        }
+
+        .gallery-caption {
+            padding: 12px;
+            font-size: 14px;
+        }
+
+        /* REGISTRATION */
+
+        .register {
+            background: #000;
+            color: #fff;
+        }
+
+        .register .section-subtitle {
+            color: #ccc;
+        }
+
+        form {
+            max-width: 700px;
+            margin: auto;
+            background: #fff;
+            color: #111;
+            padding: 35px;
+            border-radius: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 7px;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        form .btn {
+            width: 100%;
+            background: #000;
+            color: #fff;
+        }
+
+        .success-message {
+            display: none;
+            margin-top: 20px;
+            padding: 18px;
+            background: #eee;
+            color: #000;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            text-align: center;
+            background: #f5f5f5;
+        }
+
+        .contact-box {
+            max-width: 800px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .contact-item {
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        .contact-item h3 {
+            margin-bottom: 8px;
+        }
+
+        .contact-item a {
+            color: #111;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .whatsapp-btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 14px 25px;
+            background: #000;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #000;
+            color: #fff;
+            text-align: center;
+            padding: 35px 7%;
+        }
+
+        footer p {
+            color: #bbb;
+            margin-top: 5px;
+        }
+
+        /* MODALS */
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 3000;
+            inset: 0;
+            background: rgba(0,0,0,.8);
+            padding: 30px;
+            overflow-y: auto;
+        }
+
+        .modal-content {
+            background: #fff;
+            max-width: 700px;
+            margin: 60px auto;
+            padding: 30px;
+            border-radius: 10px;
+            position: relative;
+            color: #111;
+        }
+
+        .close {
+            position: absolute;
+            right: 18px;
+            top: 8px;
+            font-size: 32px;
+            cursor: pointer;
+        }
+
+        .image-modal img {
+            max-width: 95%;
+            max-height: 85vh;
+            display: block;
+            margin: 30px auto;
+        }
+
+        .empty-message {
+            text-align: center;
+            color: #777;
+            padding: 30px;
+            grid-column: 1 / -1;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 850px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+        @media (max-width: 550px) {
+
+            section {
+                padding: 60px 5%;
+            }
+
+            .hero h1 {
+                font-size: 30px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .contact-box {
+                grid-template-columns: 1fr;
+            }
+
+            form {
+                padding: 22px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo-area">
+
+        <img src="./images/sdec-logo.jpg" alt="SDEC Logo">
+
+        <h2>SDEC</h2>
+
+    </div>
+
+    <nav>
+
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#programs">Programs</a>
+        <a href="#news">News</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#register">Register</a>
+        <a href="#contact">Contact</a>
+
+        <a href="admin.html" class="admin-link">
+            Admin
+        </a>
+
+    </nav>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <img
+            src="./images/sdec-logo.jpg"
+            alt="SDEC Logo"
+            class="hero-logo"
+        >
+
+        <h1>
+            Empowering Skills.<br>
+            Creating Opportunities.
+        </h1>
+
+        <p>
+            SDEC - Skill Development Entrepreneurship Company
+            provides practical skills development and entrepreneurship
+            opportunities for individuals ready to learn, grow and build.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#programs" class="btn">
+                Explore Programs
+            </a>
+
+            <a href="#register" class="btn btn-dark">
+                Register Now
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+    <h2 class="section-title">
+        About SDEC
+    </h2>
+
+    <p class="section-subtitle">
+        Developing people through practical skills and entrepreneurship.
+    </p>
+
+    <div class="about-grid">
+
+        <div class="about-text">
+
+            <p>
+                SDEC - Skill Development Entrepreneurship Company
+                is focused on helping individuals develop practical,
+                useful and entrepreneurial skills.
+            </p>
+
+            <p>
+                Our approach is centered around learning,
+                practical development and opportunities that
+                can help participants apply their knowledge
+                in real-world situations.
+            </p>
+
+            <p>
+                We provide training programs designed to support
+                personal development, entrepreneurship and
+                skills acquisition.
+            </p>
+
+        </div>
+
+        <div class="about-box">
+
+            <h3>
+                Our Purpose
+            </h3>
+
+            <p>
+                To equip people with relevant skills,
+                encourage entrepreneurship and create
+                pathways for individuals to develop
+                their potential.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- STATS -->
+
+<section class="stats">
+
+    <div class="stat">
+
+        <h2>Skills</h2>
+
+        <p>
+            Practical Learning
+        </p>
+
+    </div>
+
+    <div class="stat">
+
+        <h2>Growth</h2>
+
+        <p>
+            Personal Development
+        </p>
+
+    </div>
+
+    <div class="stat">
+
+        <h2>Business</h2>
+
+        <p>
+            Entrepreneurship
+        </p>
+
+    </div>
+
+    <div class="stat">
+
+        <h2>Future</h2>
+
+        <p>
+            New Opportunities
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- PROGRAMS -->
+
+<section id="programs">
+
+    <h2 class="section-title">
+        Training Programs
+    </h2>
+
+    <p class="section-subtitle">
+        Explore available SDEC training opportunities.
+    </p>
+
+    <div
+        class="cards"
+        id="programList"
+    ></div>
+
+</section>
+
+
+<!-- NEWS -->
+
+<section class="news" id="news">
+
+    <h2 class="section-title">
+        News & Announcements
+    </h2>
+
+    <p class="section-subtitle">
+        Stay updated with SDEC activities.
+    </p>
+
+    <div
+        class="cards"
+        id="newsList"
+    ></div>
+
+</section>
+
+
+<!-- GALLERY -->
+
+<section class="gallery" id="gallery">
+
+    <h2 class="section-title">
+        Gallery
+    </h2>
+
+    <p class="section-subtitle">
+        Explore photos from SDEC activities.
+    </p>
+
+    <div
+        class="gallery-grid"
+        id="galleryList"
+    ></div>
+
+</section>
+
+
+<!-- REGISTER -->
+
+<section class="register" id="register">
+
+    <h2 class="section-title">
+        Register With SDEC
+    </h2>
+
+    <p class="section-subtitle">
+        Take the next step by registering your interest.
+    </p>
+
+    <form id="registrationForm">
+
+        <div class="form-group">
+
+            <label for="fullName">
+                Full Name
+            </label>
+
+            <input
+                type="text"
+                id="fullName"
+                placeholder="Enter your full name"
+                required
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="phone">
+                Phone Number
+            </label>
+
+            <input
+                type="tel"
+                id="phone"
+                placeholder="Enter your phone number"
+                required
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="email">
+                Email Address
+            </label>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter your email address"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="program">
+                Select Program
+            </label>
+
+            <select id="program" required>
+
+                <option value="">
+                    Select a program
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="message">
+                Additional Message
+            </label>
+
+            <textarea
+                id="message"
+                placeholder="Additional information"
+            ></textarea>
+
+        </div>
+
+
+        <button
+            type="submit"
+            class="btn"
+        >
+            Submit Registration
+        </button>
+
+
+        <div
+            class="success-message"
+            id="successMessage"
+        ></div>
+
+    </form>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+    <h2 class="section-title">
+        Contact SDEC
+    </h2>
+
+    <p class="section-subtitle">
+        Contact us for more information about our programs.
+    </p>
+
+    <div class="contact-box">
+
+        <div class="contact-item">
+
+            <h3>
+                Phone
+            </h3>
+
+            <a href="tel:08030822746">
+                08030822746
+            </a>
+
+        </div>
+
+
+        <div class="contact-item">
+
+            <h3>
+                Phone
+            </h3>
+
+            <a href="tel:09094157411">
+                09094157411
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <a
+        class="whatsapp-btn"
+        href="https://wa.me/2348030822746?text=Hello%20SDEC%2C%20I%20would%20like%20more%20information."
+        target="_blank"
+    >
+        Contact SDEC on WhatsApp
+    </a>
+
+</section>
+
+
+<!-- PROGRAM MODAL -->
+
+<div
+    class="modal"
+    id="programModal"
+>
+
+    <div class="modal-content">
+
+        <span
+            class="close"
+            onclick="closeProgramModal()"
+        >
+            &times;
+        </span>
+
+        <h2 id="modalProgramTitle">
+            Program Details
+        </h2>
+
+        <p>
+            <strong>Duration:</strong>
+            <span id="modalProgramDuration"></span>
+        </p>
+
+        <p id="modalProgramDescription"></p>
+
+    </div>
+
+</div>
+
+
+<!-- IMAGE MODAL -->
+
+<div
+    class="modal image-modal"
+    id="imageModal"
+>
+
+    <span
+        class="close"
+        onclick="closeImageModal()"
+        style="color:white;"
+    >
+        &times;
+    </span>
+
+    <img
+        id="fullImage"
+        src=""
+        alt="SDEC Gallery"
+    >
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h3>
+        SDEC
+    </h3>
+
+    <p>
+        Skill Development Entrepreneurship Company
+    </p>
+
+    <p>
+        Developing skills. Encouraging entrepreneurship.
+    </p>
+
+    <p>
+        &copy; 2026 SDEC. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+<script>
+
+    /* =========================
+       SECURITY HELPER
+    ========================= */
+
+    function escapeHTML(value) {
+
+        if (
+            value === null ||
+            value === undefined
+        ) {
+            return "";
+        }
+
+        return String(value)
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+
+    }
+
+
+    /* =========================
+       PROGRAMS
+    ========================= */
+
+    function loadPrograms() {
+
+        const list =
+            document.getElementById(
+                "programList"
+            );
+
+        const select =
+            document.getElementById(
+                "program"
+            );
+
+        const programs =
+            JSON.parse(
+                localStorage.getItem(
+                    "sdecTrainingPrograms"
+                )
+            ) || [];
+
+
+        list.innerHTML = "";
+
+        select.innerHTML =
+            `<option value="">
+                Select a program
+            </option>`;
+
+
+        if (programs.length === 0) {
+
+            list.innerHTML =
+                `<div class="empty-message">
+                    Training programs will appear here soon.
+                </div>`;
+
+            return;
+        }
+
+
+        programs.forEach(
+            (program, index) => {
+
+                const title =
+                    program.title ||
+                    "Training Program";
+
+                const duration =
+                    program.duration ||
+                    "Not specified";
+
+                const description =
+                    program.description ||
+                    "";
+
+
+                const card =
+                    document.createElement(
+                        "div"
+                    );
+
+                card.className = "card";
+
+
+                card.innerHTML = `
+
+                    <h3>
+                        ${escapeHTML(title)}
+                    </h3>
+
+                    <p>
+                        <strong>Duration:</strong>
+                        ${escapeHTML(duration)}
+                    </p>
+
+                    <p>
+                        ${escapeHTML(
+                            description.length > 120
+                            ? description.substring(0,120) + "..."
+                            : description
+                        )}
+                    </p>
+
+                    <button
+                        class="btn"
+                        onclick="viewProgram(${index})"
+                    >
+                        View Details
+                    </button>
+
+                `;
+
+
+                list.appendChild(card);
+
+
+                const option =
+                    document.createElement(
+                        "option"
+                    );
+
+                option.value = title;
+
+                option.textContent = title;
+
+                select.appendChild(option);
+
+            }
+        );
+
+    }
+
+
+    function viewProgram(index) {
+
+        const programs =
+            JSON.parse(
+                localStorage.getItem(
+                    "sdecTrainingPrograms"
+                )
+            ) || [];
+
+
+        const program =
+            programs[index];
+
+
+        if (!program) {
+            return;
+        }
+
+
+        document.getElementById(
+            "modalProgramTitle"
+        ).textContent =
+            program.title ||
+            "Program Details";
+
+
+        document.getElementById(
+            "modalProgramDuration"
+        ).textContent =
+            program.duration ||
+            "Not specified";
+
+
+        document.getElementById(
+            "modalProgramDescription"
+        ).textContent =
+            program.description ||
+            "";
+
+
+        document.getElementById(
+            "programModal"
+        ).style.display =
+            "block";
+
+    }
+
+
+    function closeProgramModal() {
+
+        document.getElementById(
+            "programModal"
+        ).style.display =
+            "none";
+
+    }
+
+
+    /* =========================
+       NEWS
+    ========================= */
+
+    function loadNews() {
+
+        const list =
+            document.getElementById(
+                "newsList"
+            );
+
+
+        const news =
+            JSON.parse(
+                localStorage.getItem(
+                    "sdecAnnouncements"
+                )
+            ) || [];
+
+
+        list.innerHTML = "";
+
+
+        if (news.length === 0) {
+
+            list.innerHTML =
+                `<div class="empty-message">
+                    No announcements available yet.
+                </div>`;
+
+            return;
+        }
+
+
+        news.forEach(item => {
+
+            const title =
+                item.title ||
+                "Announcement";
+
+            const date =
+                item.date ||
+                "";
+
+            const description =
+                item.description ||
+                item.details ||
+                "";
+
+
+            const card =
+                document.createElement(
+                    "div"
+                );
+
+            card.className =
+                "card news-card";
+
+
+            card.innerHTML = `
+
+                <h3>
+                    ${escapeHTML(title)}
+                </h3>
+
+                <div class="news-date">
+                    ${escapeHTML(date)}
+                </div>
+
+                <p>
+                    ${escapeHTML(description)}
+                </p>
+
+            `;
+
+
+            list.appendChild(card);
+
+        });
+
+    }
+
+
+    /* =========================
+       GALLERY
+    ========================= */
+
+    function loadGallery() {
+
+        const list =
+            document.getElementById(
+                "galleryList"
+            );
+
+
+        const photos =
+            JSON.parse(
+                localStorage.getItem(
+                    "sdecGalleryPhotos"
+                )
+            ) || [];
+
+
+        list.innerHTML = "";
+
+
+        if (photos.length === 0) {
+
+            list.innerHTML =
+                `<div class="empty-message">
+                    Gallery photos will appear here soon.
+                </div>`;
+
+            return;
+        }
+
+
+        photos.forEach(
+            (photo, index) => {
+
+                const src =
+                    typeof photo === "string"
+                    ? photo
+                    : photo.src ||
+                      photo.image ||
+                      "";
+
+
+                if (!src) {
+                    return;
+                }
+
+
+                const title =
+                    typeof photo === "object"
+                    ? photo.title ||
+                      "SDEC Gallery"
+                    : "SDEC Gallery";
+
+
+                const item =
+                    document.createElement(
+                        "div"
+                    );
+
+                item.className =
+                    "gallery-item";
+
+
+                item.innerHTML = `
+
+                    <img
+                        src="${src}"
+                        alt="${escapeHTML(title)}"
+                        onclick="openImageModal(${index})"
+                    >
+
+                    <div class="gallery-caption">
+                        ${escapeHTML(title)}
+                    </div>
+
+                `;
+
+
+                list.appendChild(item);
+
+            }
+        );
+
+    }
+
+
+    function openImageModal(index) {
+
+        const photos =
+            JSON.parse(
+                localStorage.getItem(
+                    "sdecGalleryPhotos"
+                )
+            ) || [];
+
+
+        const photo =
+            photos[index];
+
+
+        if (!photo) {
+            return;
+        }
+
+
+        const src =
+            typeof photo === "string"
+            ? photo
+            : photo.src ||
+              photo.image ||
+              "";
+
+
+        if (!src) {
+            return;
+        }
+
+
+        document.getElementById(
+            "fullImage"
+        ).src = src;
+
+
+        document.getElementById(
+            "imageModal"
+        ).style.display =
+            "block";
+
+    }
+
+
+    function closeImageModal() {
+
+        document.getElementById(
+            "imageModal"
+        ).style.display =
+            "none";
+
+    }
+
+
+    /* =========================
+       REGISTRATION
+    ========================= */
+
+    document
+        .getElementById(
+            "registrationForm"
+        )
+        .addEventListener(
+            "submit",
+            function(event) {
+
+                event.preventDefault();
+
+
+                const fullName =
+                    document.getElementById(
+                        "fullName"
+                    ).value.trim();
+
+
+                const phone =
+                    document.getElementById(
+                        "phone"
+                    ).value.trim();
+
+
+                const email =
+                    document.getElementById(
+                        "email"
+                    ).value.trim();
+
+
+                const program =
+                    document.getElementById(
+                        "program"
+                    ).value;
+
+
+                const message =
+                    document.getElementById(
+                        "message"
+                    ).value.trim();
+
+
+                const reference =
+                    "SDEC-" +
+                    Date.now()
+                        .toString()
+                        .slice(-8);
+
+
+                const registrations =
+                    JSON.parse(
+                        localStorage.getItem(
+                            "sdecRegistrations"
+                        )
+                    ) || [];
+
+
+                registrations.push({
+
+                    reference:
+                        reference,
+
+                    fullName:
+                        fullName,
+
+                    phone:
+                        phone,
+
+                    email:
+                        email,
+
+                    program:
+                        program,
+
+                    message:
+                        message,
+
+                    date:
+                        new Date()
+                            .toLocaleString()
+
+                });
+
+
+                localStorage.setItem(
+                    "sdecRegistrations",
+                    JSON.stringify(
+                        registrations
+                    )
+                );
+
+
+                const success =
+                    document.getElementById(
+                        "successMessage"
+                    );
+
+
+                success.innerHTML = `
+
+                    Registration submitted successfully!
+
+                    <br><br>
+
+                    <strong>
+                        Your Reference Number
+                    </strong>
+
+                    <br>
+
+                    <span style="font-size:22px;">
+                        ${escapeHTML(reference)}
+                    </span>
+
+                    <br><br>
+
+                    Please keep this reference number.
+
+                `;
+
+
+                success.style.display =
+                    "block";
+
+
+                document
+                    .getElementById(
+                        "registrationForm"
+                    )
+                    .reset();
+
+
+                window.scrollTo({
+
+                    top:
+                        document.getElementById(
+                            "register"
+                        ).offsetTop - 70,
+
+                    behavior:
+                        "smooth"
+
+                });
+
+            }
+        );
+
+
+    /* =========================
+       CLOSE MODALS
+    ========================= */
+
+    window.addEventListener(
+        "click",
+        function(event) {
+
+            const programModal =
+                document.getElementById(
+                    "programModal"
+                );
+
+            const imageModal =
+                document.getElementById(
+                    "imageModal"
+                );
+
+
+            if (
+                event.target ===
+                programModal
+            ) {
+
+                programModal.style.display =
+                    "none";
+
+            }
+
+
+            if (
+                event.target ===
+                imageModal
+            ) {
+
+                imageModal.style.display =
+                    "none";
+
+            }
+
+        }
+    );
+
+
+    /* =========================
+       LOAD DATA
+    ========================= */
+
+    loadPrograms();
+
+    loadNews();
+
+    loadGallery();
+
+
+    /* =========================
+       LIVE ADMIN UPDATES
+    ========================= */
+
+    window.addEventListener(
+        "storage",
+        function(event) {
+
+            if (
+                event.key ===
+                "sdecTrainingPrograms"
+            ) {
+
+                loadPrograms();
+
+            }
+
+
+            if (
+                event.key ===
+                "sdecAnnouncements"
+            ) {
+
+                loadNews();
+
+            }
+
+
+            if (
+                event.key ===
+                "sdecGalleryPhotos"
+            ) {
+
+                loadGallery();
+
+            }
+
+        }
+    );
+
+</script>
+
+</body>
+</html>
